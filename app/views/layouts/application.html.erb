@@ -4,11 +4,55 @@
     <title>Board</title>
     <%= csrf_meta_tags %>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+        <ul class="side-nav fixed">
+            <li id="logo">
+                <i class="large material-icons">forum</i>
+            </li>
+
+            <li class="search">
+                <nav>
+                    <div class="nav-wrapper">
+                      <form>
+                        <div class="input-field">
+                          <input id="search" type="search" required>
+                          <label for="search"><i class="material-icons">search</i></label>
+                          <i class="material-icons">close</i>
+                        </div>
+                      </form>
+                    </div>
+                </nav>
+            </li>
+
+            <li id="tags">
+                <ul class="collection">
+                    <li class="collection-item">
+                        <i class="tiny material-icons">close</i>
+                        #dev
+                        <span class="badge" data-badge-caption="threads">345</span>
+                    </li>
+                    <li class="collection-item">
+                        <i class="tiny material-icons">close</i>
+                        #lit
+                        <span class="badge" data-badge-caption="threads">670</span>
+                    </li>
+                    <li class="collection-item">
+                        <i class="tiny material-icons">close</i>
+                        #vg
+                        <span class="badge" data-badge-caption="threads">12,981</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <%= yield %>
+    </main>
   </body>
 </html>
